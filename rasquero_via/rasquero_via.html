@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" 
+		content="width=device-width, 
+			initial-scale=1.0">
+	<link rel="stylesheet" href="styles.css">
+	<title>Rasquero Via Page</title>
+</head>
+
+<body>
+	<header>
+		<h1>Rasquero, Via Clariz</h1>
+	</header>
+		
+	<div class="about">
+		<h2>My Interest and Hobbies</h2>
+		<ul>
+			<li>Play online games.</li>
+				<p>I like to play games.</p>
+			<li>Watch kdrama/movies.</li>
+				<p>Watching kdrama/movies is one of my hobby.</p>
+			<li>Scroll on socal media.</li>
+				<p>I scroll in social media when I'm bored.</p>
+			<li>Collecting stationeries.</li>
+				<p>I love to keep stationeries.</p>
+			<li>Listen to music and read stories.</li>
+				<p>Listening to music makes me feel good.</p>
+		</ul>			
+	</div>
+		
+	<div class="goals">
+		<h2>My Goals</h2>
+		<ul>
+			<li><p>Achieve a level of financial stability
+				 and independence.</p></li>
+			<li><p>Continuously enhance my knowledge and skills 
+				through advanced degrees, certifications, or 
+				lifelong learning.</p></li>
+			<li><p>Visit and experience new cultures, countries, 
+				and destinations.</p></li>
+			<li><p>Maintain a healthy lifestyle, both physically 
+				and mentally, to ensure a long and 
+				fulfilling life.</p></li>
+			<li><p>Build and sustain loving, supportive relationships 
+				with family and friends.</p></li>
+		</ul>	
+
+		<hr>
+
+		<h2> Comments </h2>
+		<button onclick="sortComments('asc')">
+			Sort by Date (Ascending)
+		</button>
+		<button onclick="sortComments('desc')">
+			Sort by Date (Descending)
+		</button>
+
+		<ul id="comments_list">
+			<li><p>Mark: I think it is a wise decision to prioritize 
+				achieving financial stability and independence</p></li>
+			<li><p>Chrystine Noelle: Hi Via! Your goals are truly 
+				inspiring. Achieving financial stability and independence 
+				is an important milestone. Keep going strong!</p></li>
+			<li><p>Sam: Hey, Via! Keep working towards your goals
+				with determination and passion!</p></li>
+			<li><p>Kyla: Exactly! They're all correct! I'm here 
+				to celebrate every milestone with you. </p></li>
+		</ul>
+			
+		<form>
+			<label for="Name:">Name:</label>
+			<input
+				id="name"
+				type="text"
+				onInput="onTextChange()">
+
+			<label for="Comment:">Comment:</label>
+			<textarea
+				id="my_input"
+				type="textarea"
+				onInput="onTextChange()">
+			</textarea>
+        
+			<button
+				id ="submit_button"
+				type="button"
+				disabled="true"
+				onclick="addComment()">
+				Comment
+			</button> 
+		</form>			
+	</div>
+		
+	<div class="works">
+		<h2>My Works</h2>
+		<ol>
+			<li><a href="#" target="_blank">Work1</a></li>
+			<li><a href="#" target="_blank">Work2</a></li>
+			<li><a href="#" target="_blank">Work3</a></li>
+			<li><a href="#" target="_blank">Work4</a></li>
+			<li><a href="#" target="_blank">Work5</a></li>				
+		</ol>
+	</div>
+		
+	<div class="testimonials">
+		<h2>Testimonials</h2>
+		<ul>
+			<li><p>Via is a true marketing genius. Her creativity and 
+				strategic thinking have helped us launch successful 
+				marketing campaigns time and again. 
+				She has a deep understanding of consumer behavior 
+				and always comes up with fresh ideas that resonate
+				with our target audience. - Mark </li></p>
+			<li><p>Via is an amazing team player. She's not only 
+				talented but also a great communicator. Her attention 
+				to detail and ability to tackle complex problems made
+				a significant impact on our project's success! 
+				- Chrystine Noelle</li></p>
+			<li><p> Working with Via, was a true pleasure. Her strong
+				interpersonal skills, adaptability, and willingness
+				to support team members ensured a harmonious and 
+				productive group dynamic. - Sam</li></p>
+			<li><p> Via is a reliable and dependable team member. 
+				Their commitment to meeting deadlines and 
+				delivering high-quality work is commendable. 
+				- Kyla </li></p>
+		</ul>	
+	</div>
+
+	<div class="countries">
+		<h2>Countries of the World</h2>
+		<button
+			id ="countries_button"
+			type="button"
+			onclick="goToCountryWebpage()">
+			Go to Country Webpage
+		</button>
+	</div>
+		
+	<div class="gallery">
+		<h2>Gallery</h2>
+		<img src="picture2.jpg">
+		<img src="picture1.png">
+		<img src="picture3.jpg">
+		<img src="picture3.jpg">
+		<img src="picture1.png">
+		<img src="picture2.jpg">
+	</div>
+
+	<script src="exercise_10.js"></script> 
+
+</body>
+</html>	
