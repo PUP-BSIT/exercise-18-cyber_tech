@@ -1,0 +1,78 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f8f8;
+  margin: 0;
+}
+
+form, table {
+  width: 80%;
+  margin: 20px auto;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form {
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+}
+
+form label, form input, form button, #update_form input, #update_form button {
+  display: block;
+  margin: 10px auto;
+}
+
+form label {
+  color: #555;
+}
+
+form input, form button, #update_form input, #update_form button {
+  padding: 12px 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+form button, #update_form button {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+form button:hover, #update_form button:hover {
+  background-color: #45a049;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 20px 0;
+}
+
+table, th, td {
+  border: 1px solid #ddd;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+}
+
+#user_list th, #user_list td {
+  text-align: center;
+}
+
+#update_form {
+  display: none;
+  text-align: center; /* Added for center alignment */
+}
+
+#update_form_title {
+  text-align: center;
+  font-weight: 600;
+}
