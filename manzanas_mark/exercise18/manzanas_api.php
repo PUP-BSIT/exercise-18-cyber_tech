@@ -3,7 +3,7 @@ $conn = mysqli_connect(
     "127.0.0.1",      // Host
     "u952592082_exercise_18",  // Username
     "Cybertech_18",    // Password
-    "animal_list"      // Database
+    "u952592082_cybertech_ex18"      // Database
   );
 
 if (!$conn) {
