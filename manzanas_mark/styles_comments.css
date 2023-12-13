@@ -1,0 +1,45 @@
+ul#comments_list {
+  list-style: none;
+  padding: 0;
+}
+
+ul#comments_list li {
+  background-color: #f2f2f2;
+  border: 1px solid #ddd;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+ul#comments_list li span.username {
+  font-weight: bold;
+  margin: 0;
+}
+
+ul#comments_list li span.date {
+  font-weight: lighter;
+  margin: 0;
+  font-size: 10px;
+}
+
+.time {
+  font-weight: lighter;
+  font-size: 10px;
+}
+
+ul#comments_list li p.comment {
+  font-weight: normal;
+  margin: 0;
+}
+
+ul#comments_list li span.username::before {
+  content: "";
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background-image: url('images/profile.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-right: 10px;
+}
