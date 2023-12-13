@@ -1,3 +1,5 @@
+const apiBaseUrl = "https://cybertechlogistic.online/exercise_18/manzanas_api.php";
+
 function createActionButton(type, userId) {
   const button = document.createElement("button");
   button.innerHTML = type;
@@ -43,7 +45,7 @@ function submitUser() {
   const age = document.querySelector("#age").value;
   const habitat = document.querySelector("#habitat").value;
 
-  fetch("./manzanas_api.php", {
+  fetch(apiBaseUrl, {
     method: "POST",
     headers: {
       "Content-type": "application/x-www-form-urlencoded",
@@ -76,14 +78,13 @@ function showUpdateForm(userId) {
   const updateForm = document.querySelector("#update_form");
   updateForm.style.display = "block";
 
-  fetch(`./manzanas_api.php?id=${userId}`)
+  fetch(`${apiBaseUrl}?id=${userId}`)
     .then(response => response.json())
     .then(userData => {
       for (const key in userData) {
         const element = document.querySelector(`#update_${key}`);
         if (element) {
           if (element.type === "checkbox") {
-            // Handle checkboxes separately
             element.checked = userData[key];
           } else {
             element.value = userData[key];
@@ -109,7 +110,7 @@ function submitUpdate() {
   const userId = document.querySelector("#update_form")
     .getAttribute("data-user-id");
 
-  fetch("./manzanas_api.php", {
+  fetch(apiBaseUrl, {
     method: "PATCH",
     headers: {
       "Content-type": "application/x-www-form-urlencoded",
@@ -143,7 +144,7 @@ function refresh() {
     <th>Action</th>
   </tr>`;
 
-  fetch("./manzanas_api.php")
+  fetch(apiBaseUrl)
     .then((response) => response.json())
     .then((userList) => {
       for (const user of userList) {
@@ -156,7 +157,7 @@ function refresh() {
 }
 
 function deleteRow(userId) {
-  fetch('./manzanas_api.php', {
+  fetch(apiBaseUrl, {
     method: 'DELETE',
     headers: {
       'Content-type': 'application/x-www-form-urlencoded',
