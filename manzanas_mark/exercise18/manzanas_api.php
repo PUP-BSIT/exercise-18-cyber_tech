@@ -1,20 +1,21 @@
 <?php
+header("Content-Type: application/json");
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: *");
+header("Access-Control-Allow-Headers: *");
+
+$method = $_SERVER['REQUEST_METHOD'];
+
 $conn = mysqli_connect(
     "127.0.0.1",      // Host
     "u952592082_exercise_18",  // Username
     "Cybertech_18",    // Password
     "u952592082_cybertech_ex18"      // Database
-  );
+);
 
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-
-header("Content-Type: application/json");
-
-header("Access-Control-Allow-Origin: https://cybertech-exercise18.netlify.app/");
-header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
-header("Access-Control-Allow-Headers: Content-Type, Authorization");
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Insert operation
