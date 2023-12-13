@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SANCHEZ SAMANTHA NICOLE PAGE</title>
+    <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="header">
+        <h1>Sanchez, Samantha Nicole</h1>
+        <img src="sam2x2pic.jpg" alt="sam2x2pic">
+    </div>
+
+    <div>
+        <h2>My Interests and Hobbies</h2>
+        <ul>
+            <li> Photography </li>
+            <p> I love taking pictures whenever I see a beautiful 
+                thing or place. </p>
+            <li> Traveling </li>
+            <p> I enjoy exploring new places. </p>
+            <li> Swimming </li>
+            <p> It's such a peaceful and enjoyable activity. </p>
+            <li> Watching vlogs </li>
+            <p> I like watching entertainment vlogs. </p>
+            <li> Music </li>
+            <p> Listening to music make me calms my mind and body. 
+                It can be very relaxing. </p>
+        </ul>
+    </div>
+
+    <div>
+        <h2>My Goals</h2>
+        <ol>
+            <li>Earn a degree.</li>
+            <li>Enhance self-confidence and self-esteem.</li>
+            <li>Develop better communication and interpersonal skills.</li>
+            <li>Explore new places and cultures.</li>
+            <li>Visit specific countries or destinations.</li>
+            <li>Start investing or saving for long-term financial goals.</li>
+            <li> Build and maintain healthy, loving relationships.</li>
+        </ol>        
+    </div>
+    
+    <div>
+        <form id="comment_Form">
+            <h2>Comments</h2>   
+
+            <ul class="comments-list">
+                <li data-timestamp="2023-11-13T12:00:00Z">
+                    <strong>Chrystine Noelle:</strong>
+                    <span>Hi Samantha! Your goals are commendable. 
+                        Earning a degree is a significant achievement...</span>
+                </li>
+                <li data-timestamp="2023-11-13T12:30:00Z">
+                    <strong>Mark:</strong>
+                    <span>I agree that enhancing one's self-confidence is 
+                        needed in being successful in the IT industry.</span>
+                </li>
+                <li data-timestamp="2023-11-13T13:00:00Z">
+                    <strong>Via:</strong>
+                    <span>Great goals, Sam! Just stay focused,
+                        and success will follow.</span>
+                </li>
+                <li data-timestamp="2023-11-13T13:30:00Z">
+                    <strong>Kyla:</strong>
+                    <span>Remember! As you chase your dreams, 
+                        I'm here to cheer you on every step of the way.</span>
+                </li>
+            </ul>   
+            
+            <div class="sort-buttons">
+                <button 
+                type="button" 
+                id="sort_asc">Sort by Date (Ascending)</button>
+                <button 
+                type="button" 
+                id="sort_desc">Sort by Date (Descending)</button>
+            </div>
+
+            <fieldset>
+                <label for="name">Name: </label>
+                <input type="text" name="name" id="name_input"/>
+    
+                <label for="comment">Comment: </label>
+                <textarea id="comment_input" name="comment" rows="5" cols="33">
+                </textarea>
+    
+                <button 
+                id="submit_comment"
+                type="button" disabled>Comment</button>     
+            </fieldset>         
+        </form>
+    </div>
+    
+    <div>
+        <h2>My Works</h2>
+        <ol>
+            <li><a href="#">Work 1</a></li>
+            <li><a href="#">Work 2</a></li>
+            <li><a href="#">Work 3</a></li>
+            <li><a href="#">Work 4</a></li>
+            <li><a href="#">Work 5</a></li>
+        </ol>
+    </div>
+
+    <div>
+        <h2>Testimonials</h2>
+		<p>"I have had the privilege of working with Samantha on various HR 
+            initiatives, and her ability to lead and inspire teams is 
+            outstanding. Her interpersonal skills, coupled with her in-depth
+            knowledge of HR best practices, make her an exceptional HR 
+            professional - Mark."
+	    </p>
+		<p>"Samantha is a true professional and an excellent collaborator. 
+            She always came up with innovative ideas and was eager to help 
+            whenever needed. Her dedication and passion for the project 
+            were truly remarkable!" - Chrystine Noelle</p>
+		<p>I am incredibly impressed with Sam's work on our HTML and 
+            CSS project. Her attention to detail, coding skills, and design
+            aesthetics were outstanding. 
+			She demonstrated a strong commitment to producing high-quality
+            code and created a visually appealing website with complementary 
+            colors and clean layouts. - Via.</p>
+		<p> In every collaboration, Samantha has proven to be a great 
+            communicator and a proactive problem-solver. They foster 
+            a sense of unity within our group. -Kyla </p>
+    </div>
+    
+    <div>
+        <h2>Countries of the World</h2>
+        <button 
+		onclick="window.location.href='countries.html'">
+		Explore Countries
+	</button>
+    </div>       
+
+    <div>
+        <h2>Gallery</h2>
+        <div class="gallery-container">
+            <div class="gallery-item">
+                <img src="sampic1.jpg" alt="Image 1">
+            </div>
+            <div class="gallery-item">
+                <img src="sampic3.jpg" alt="Image 2">
+            </div>
+            <div class="gallery-item">
+                <img src="sampic5.jpg" alt="Image 3">
+            </div>
+            <div class="gallery-item">
+                <img src="sampic3.jpg" alt="Image 4">
+            </div>
+            <div class="gallery-item">
+                <img src="sampic5.jpg" alt="Image 5">
+            </div>
+            <div class="gallery-item">
+                <img src="sampic1.jpg" alt="Image 6">
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>       
+</body>
+</html>
