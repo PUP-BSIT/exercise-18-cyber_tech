@@ -62,6 +62,7 @@ function sortComments(order) {
   console.log(`Comments sorted by date in ${currentSortOrder}ending order.`);
 }
 
+// Countries
 function goToCountryWebpage() {
   window.location.href="countries.html";
 }
@@ -115,3 +116,216 @@ function displayRegionCountries(regionCountries) {
     (country => `<li>${country.name.common}
     </li>`).join('')}</ul>`;
 }
+
+// Destinations
+function goToDestinationPage() {
+  window.location.href = "travel_destinations.html";
+}
+
+let currentUpdateId = null;
+const backendUrl = "https://cybertechlogistic.online/exercise_18/destinations.php";
+
+function createTravelDestination() {
+  const formData = new FormData(document.getElementById('create_form'));
+
+  fetch(backendUrl, {
+    method: 'POST',
+    body: formData
+  })
+
+  .then(response => response.json())
+  .then(data => {
+    console.log('Response from server:', data); 
+    if (data.status === 'success' && data.data && data.data.length > 0) {
+    console.log('success: ', data.message);
+
+      const destination = data.data[0];
+      console.log('Destination:', destination); 
+
+      updatedNameInput.value = destination.name;
+      updatedLocationInput.value = destination.location;
+      updatedDescriptionInput.value = destination.description;
+      updatedRatingInput.value = destination.rating;
+      updatedPopularAttractionsInput.value = destination.popular_attractions;
+
+      updateForm.style.display = 'block';
+
+      fetchTravelDestinations();
+    } else {
+        console.error('Error:', data.message);
+        alert('Error fetching destination details. Please try again.');
+    }
+  })
+  .catch((error) => {
+      console.error('Error:', error);
+      alert('An unexpected error occurred. Please try again later.');
+  });
+}
+
+function fetchTravelDestinations() {
+  fetch(backendUrl, {
+    method: 'GET'
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (data.status === 'success') {
+      displayTravelDestinations(data.data);
+    } else {
+      console.error('Error:', data.message);
+    }
+  })
+  .catch((error) => {
+      console.error('Error:', error);
+  });
+}
+
+function displayTravelDestinations(destinations) {
+  const destinationList = document.getElementById('destination_list');
+  destinationList.innerHTML = ''; 
+
+  const tableHeader = document.createElement('tr');
+  tableHeader.innerHTML = `
+    <th>Name</th>
+    <th>Location</th>
+    <th>Description</th>
+    <th>Rating</th>
+    <th>Popular Attractions</th>
+    <th>Actions</th>
+  `;
+  destinationList.appendChild(tableHeader);
+
+  destinations.forEach(destination => {
+    const tableRow = document.createElement('tr');
+
+    tableRow.innerHTML = `
+      <td>${destination.name}</td>
+      <td>${destination.location}</td>
+      <td>${destination.description}</td>
+      <td>${destination.rating}</td>
+      <td>${destination.popular_attractions}</td>
+      <td>
+        <button onclick="updateTravelDestination(${destination.id})">
+          Update
+        </button>
+        <button onclick="deleteTravelDestination(${destination.id})">
+          Delete
+        </button>
+      </td>
+    `;
+
+    destinationList.appendChild(tableRow);
+  });
+}
+
+function updateTravelDestination(id) {
+  const updateForm = 
+    document.getElementById('update_form');
+  const updatedNameInput = 
+    document.getElementById('update_name');
+  const updatedLocationInput = 
+    document.getElementById('update_location');
+  const updatedDescriptionInput = 
+    document.getElementById('update_description');
+  const updatedRatingInput = 
+    document.getElementById('update_rating');
+  const updatedPopularAttractionsInput = 
+    document.getElementById('update_popular_attractions');
+
+  fetch(`${backendUrl}?id=${id}`, {
+    method: 'GET'
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (data.status === 'success' && data.data.length > 0) {
+      const destination = data.data[0];
+
+        updatedNameInput.value = destination.name;
+        updatedLocationInput.value = destination.location;
+        updatedDescriptionInput.value = destination.description;
+        updatedRatingInput.value = destination.rating;
+        updatedPopularAttractionsInput.value = destination.popular_attractions;
+
+        updateForm.style.display = 'block';
+
+    } else {
+        console.error('Error:', data.message);
+        alert('Error fetching destination details. Please try again.');
+    }
+  })
+  .catch((error) => {
+    console.error('Error:', error);
+    alert('An unexpected error occurred. Please try again later.');
+  });
+
+  updateForm.onsubmit = function (event) {
+  event.preventDefault();
+
+    if (!updatedNameInput.value || 
+        !updatedLocationInput.value || 
+        !updatedDescriptionInput.value || 
+        !updatedRatingInput.value || 
+        !updatedPopularAttractionsInput.value) {
+      alert("All fields are required!");
+      return;
+    }
+
+  const updatedData = {
+    id: id, 
+    name: updatedNameInput.value,
+    location: updatedLocationInput.value,
+    description: updatedDescriptionInput.value,
+    rating: updatedRatingInput.value,
+    popularAttractions: updatedPopularAttractionsInput.value
+  };
+
+  fetch(backendUrl, {
+    method: 'PATCH',
+    body: JSON.stringify(updatedData),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+      return response.json();
+  })
+  .then(data => {
+    if (data.status === 'success') {
+      console.log('Success:', data.message);
+      alert('Details have been successfully updated.');
+      
+      fetchTravelDestinations(); 
+      updateForm.style.display = 'none';
+    } else {
+      console.error('Error:', data.message);
+      alert('Error updating details. Please try again.');
+    }
+  })
+  .catch((error) => {
+    console.error('Error:', error);
+    alert('An unexpected error occurred. Please try again later.');
+  });
+  };
+}
+
+function deleteTravelDestination(id) {
+  fetch(`${backendUrl}?id=${id}`, {
+    method: 'DELETE'
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (data.status === 'success') {
+      console.log('Success:', data.message);          
+      fetchTravelDestinations(); 
+    } else {
+        console.error('Error:', data.message);
+    }
+  })
+  .catch((error) => {
+      console.error('Error:', error);
+  });
+}
+
+document.addEventListener('DOMContentLoaded', fetchTravelDestinations);
