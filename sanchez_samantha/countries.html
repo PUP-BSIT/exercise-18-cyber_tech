@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countries of the World</title>
+    <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+    <div>
+        <h2>Countries of the World</h2>
+
+        <form id="country_search_form">
+            <fieldset>
+                <label for="country_name">Country Name: </label>
+                <input type="text" id="country_name_input" />
+                <button 
+                id="search_country_button" 
+                type="button" 
+                disabled>Search</button>
+            </fieldset>
+        </form>
+
+        <div id="country_details">
+            <!-- Display country details here -->
+        </div>
+
+        <div id="region_countries">
+            <!-- Display other countries in the same region here -->
+        </div>
+    </div>
+
+    <script src="countries_script.js"></script>       
+</body>
+</html>
