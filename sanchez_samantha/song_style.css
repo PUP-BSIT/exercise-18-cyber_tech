@@ -1,0 +1,107 @@
+body {
+    background: linear-gradient(to bottom, #6B5B95, #7E87A1);
+    font-family: Arial;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px;
+}
+
+.header h1 {
+    color: #fff;
+    margin: 0;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+h2 {
+    color: #6B5B95;
+}
+
+ul,
+ol {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+ul li,
+ol li {
+    margin-bottom: 10px;
+}
+
+form {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+form label {
+    display: block;
+    color: #6B5B95;
+    margin-bottom: 10px;
+}
+
+form input[type="text"],
+form textarea {
+    width: 98%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button,
+button {
+    padding: 10px 20px;
+    background-color: #6B5B95;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: blueviolet;
+}
+
+#songTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#songTable th,
+#songTable td {
+    padding: 10px;
+    border: 1px solid #ddd; 
+    text-align: center;
+}
+
+#songTable th {
+    background-color: #6B5B95; 
+    color: #fff; 
+}
+
+#songTable tr:nth-child(even) {
+    background-color: #f2f2f2; 
+}
+
+#songTable tr:hover {
+    background-color: #ddd; 
+}
+
+#songTable td {
+    vertical-align: middle;
+}
