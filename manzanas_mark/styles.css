@@ -1,0 +1,152 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 2px solid #fff;
+}
+
+header h1 {
+    margin: 0;
+}
+
+h2 {
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    background-color: #333;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    background-color: #444;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: #555;
+}
+
+li strong {
+    font-weight: bold;
+}
+
+.image-container {
+    display: inline-block;
+    margin: 15px;
+    max-width: 150px;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+}
+
+footer {
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+
+p.bold-text {
+    font-weight: bold;
+}
+
+section h2 {
+    background-color: gray;
+    padding: 10px;
+    color: white;
+}
+
+section {
+    border: 2px solid #333;
+    margin: 20px;
+    padding: 20px;
+}
+
+section#works li a, #rest_countries {
+    display: block;
+    padding: 10px 0;
+    background-color: #d3d3d3;
+    color: #000000;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    width: 100%;
+}
+
+section#works li a:hover, 
+#rest_countries:hover {
+    background-color: #555;
+}
+
+#testimonials {
+    border: 2px solid #333;
+    margin: 20px;
+    padding: 20px;
+}
+
+#testimonials h2 {
+    font-size: 24px;
+    text-align: center;
+}
+
+#testimonials p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+div {
+    margin: 20px;
+}
+
+form {
+    background-color: #f5f5f5;
+    padding: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+button[type="comment"] {
+    background-color: #555;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="comment"]:hover {
+    background-color: #333;
+}
